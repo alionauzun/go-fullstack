@@ -1,0 +1,60 @@
+//L'application front-end pour ce cours peut être clonée avec  "git clone", installée avec  "npm install", et lancée avec  "npm run start".
+
+//Les projets Node sont initialisés avec la commande  "npm init"  qui crée un fichier  "package.json"  qui contient les informations du projet.
+
+//.gitignore est un fichier qui contient les fichiers et dossiers à ignorer lors de l'ajout de fichiers au dépôt git.
+
+//Pour simplifier le développement Node, il est recommandé d'installer nodemon dans le terminal avec  "npm install -g nodemon"  qui permet de redémarrer automatiquement le serveur à chaque modification du code.
+
+//Le serveur est créé dans le fichier  "server.js"  et le code de l'application est déplacé dans le fichier  "app.js"
+
+//Le serveur est lancé avec  "node server"  et le serveur est accessible sur  "localhost:3000"
+
+//Un serveur Node basique est démarré avec la méthode  createServer  du package  http
+
+//la fonction "normalizePort" renvoie un port valide, qu'il soit fourni sous la forme d'un numéro ou d'une chaîne ;
+
+//la fonction "errorHandler" recherche les différentes erreurs et les gère de manière appropriée. Elle est ensuite enregistrée dans le serveur ;
+
+//un écouteur d'évènements est également enregistré, consignant le port ou le canal nommé sur lequel le serveur s'exécute dans la console.
+
+//Le framework "Express" est installé et enregistré dans le  package.json  avec   "npm install express" 
+
+//Pour créer une application Express, appelez simplement la méthode  express()
+
+//Un middleware est un bloc de code qui traite les requêtes et réponses de votre application.
+
+//Les middlewares sont enregistrés dans l'application avec la méthode  "use()"
+
+//Ajouter la normalisation de port, la gestion d'erreur et du logging basique à votre serveur Node le rend plus constant et plus facile à déboguer
+
+//la méthode qui permet d'empêcher des erreurs CORS est  "cors()"
+//la méthode qui permet de parser les requêtes POST est  "bodyParser.json()"
+//body-parser est un middleware qui analyse les requêtes entrantes avec un corps en JSON et est disponible sous la propriété  "req.body"
+
+
+// //---------Cette application Express contient quatre éléments de middleware :---------------
+
+// // 1. enregistre "Requête reçue !" dans la console et passe l'exécution
+// app.use((req, res, next) => { //je crée une méthode qui sera utilisée pour toutes les requêtes
+//     console.log('Requête reçue !'); //je crée une réponse en json
+//     next(); //je fais appel à la méthode next pour passer à la méthode suivante
+// });
+
+// // 2. ajoute un code d'état 201 à la réponse et passe l'exécution
+// app.use((req, res, next) => {
+//     res.status(201);
+//     next();
+// });
+
+// // 3. envoie la réponse JSON et passe l'exécution
+// app.use((req, res, next) => {
+//     res.json({message: 'Votre requête a bien été reçue !'}); //je crée une réponse en json
+// });
+
+// // 4. enregistre "Réponse envoyée avec succès !" dans la console
+// app.use((req, res) => {
+//     console.log('Réponse envoyée avec succès !');
+// });
+
+// module.exports = app; //je fais un export de app.js pour pouvoir l'utiliser dans mon fichier server.js
